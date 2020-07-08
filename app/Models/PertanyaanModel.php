@@ -11,4 +11,10 @@ class PertanyaanModel
      
         return $items;
     }
+
+    public static function save($data){
+        $new_items = DB::table('pertanyaans')->insert($data);
+
+        return $new_items;
+    }
 }

@@ -14,6 +14,24 @@ class PertanyaanController extends Controller
     }
 
     public function create(){
+        // dd('tes');
         return view('create');
+    }
+
+    public function store(Request $request){
+        $data = $request->all();
+        // dd($data);
+        unset($data["_token"]);
+        PertanyaanModel::save($data);
+
+        return redirect('pertanyaan');       
+    }
+
+    public function edit(){
+
+    }
+
+    public function update(){
+        
     }
 }
