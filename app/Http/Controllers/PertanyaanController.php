@@ -10,12 +10,12 @@ class PertanyaanController extends Controller
     public function index(){
         $pertanyaans = PertanyaanModel::get_all();
         // dd($pertanyaans);
-        return view('index',compact('pertanyaans'));
+        return view('pertanyaan.index',compact('pertanyaans'));
     }
 
     public function create(){
         // dd('tes');
-        return view('create');
+        return view('pertanyaan.create');
     }
 
     public function store(Request $request){
@@ -24,7 +24,7 @@ class PertanyaanController extends Controller
         unset($data["_token"]);
         PertanyaanModel::save($data);
 
-        return redirect('pertanyaan');       
+        return redirect('/pertanyaan');       
     }
 
     public function edit(){
@@ -32,6 +32,6 @@ class PertanyaanController extends Controller
     }
 
     public function update(){
-        
+
     }
 }
